@@ -18,6 +18,7 @@ import todosData from './todosData';
 //   return <div className='todo-list'>{data}</div>;
 // }
 
+//Class based componenets
 class App extends React.Component {
   constructor() {
     super();
@@ -28,7 +29,6 @@ class App extends React.Component {
   }
 
   handleChange(id) {
-    console.log('Changed: ', id);
     this.setState((prevState) => {
       const updatedTodos = prevState.todos.map((todo) => {
         if (todo.id === id) {
@@ -46,8 +46,9 @@ class App extends React.Component {
   }
 
   render() {
+
     const data = this.state.todos.map((item) => {
-      return <TodoItem handleChange={this.handleChange} item={item} />;
+      return <TodoItem handleChange={this.handleChange} key={item.id} item={item} />;
     });
     return <div className='todo-list'>{data}</div>;
   }

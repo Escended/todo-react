@@ -1,5 +1,6 @@
 import React from 'react';
 
+// function based components
 const TodoItem = ({ item, handleChange }) => {
   return (
     <div className='todo-item'>
@@ -9,7 +10,8 @@ const TodoItem = ({ item, handleChange }) => {
         checked={item.completed}
         onChange={() => handleChange(item.id)}
       />
-      <label htmlFor={item.id}>{item.text}</label>
+      {/* <p >{item.text}</p> */}
+      <label className={item.completed ? 'completed-item' : 'false'} htmlFor={item.id}>{item.text}</label>
     </div>
   );
 };

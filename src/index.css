@@ -55,6 +55,12 @@ code {
   color: #333333;
 }
 
+.completed-item {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #666666;
+}
+
 input[type='checkbox'] {
   margin-right: 10px;
   font-size: 30px;
